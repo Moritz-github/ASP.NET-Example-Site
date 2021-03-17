@@ -1,0 +1,41 @@
+﻿@model WebProjekt_Beispiel.Models.Article
+
+@{
+    ViewData["Title"] = "CreateNewArticle";
+}
+
+<h3>Neuen Artikel erzeugen</h3>
+
+<!-- Formular mit Hilfe von HTML und ASP.NET Core erzeugen -->
+
+<form asp-controller="shop" asp-action="createNewArticle" method="post">
+
+    <label asp-for="Articlename">Artikelname*</label><br />
+    <input asp-for="Articlename" /> <br />
+    <!-- an dieser Stelle wird die Fehlermeldung angezeigt, falls notwendig-->
+    <span asp-validation-for="Articlename" class="text-danger" style="font-size: 85%"></span> <br />
+
+
+    <label asp-for="Price">Artikelpreis*</label><br />
+    <input asp-for="Price" /> <br />
+    <span asp-validation-for="Price" class="text-danger" style="font-size: 85%"></span> <br />
+
+    <label asp-for="Description">Beschreibung</label><br />
+    <textarea asp-for="Description" rows="10" cols="40"></textarea><br />
+    <span asp-validation-for="Description" class="text-danger" style="font-size: 85%"></span> <br />
+
+    <label asp-for="ReleaseDate">Erscheinungsdatum</label><br />
+    <input asp-for="ReleaseDate" type="date" /> <br />
+
+    <label asp-for="Category">Kategorie*</label><br />
+    <select asp-for="Category">
+        <option value="notSpecified">bitte auswählen</option>
+        <option value="Computers">Computer</option>
+        <option value="Technics">Technik</option>
+        <option value="Handys">Handys</option>
+        <option value="Books">Bücher</option>
+    </select>
+
+    <input type="submit" value="Artikel erzeugen" />
+    <input type="reset" value="abbrechen" />
+</form>

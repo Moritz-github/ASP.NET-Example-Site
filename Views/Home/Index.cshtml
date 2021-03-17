@@ -1,0 +1,132 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>
+    Formular
+</h2>
+
+<!-- formulare werden mit dem form-Tag erzeugt 
+	action ... wohin soll das Formular gesendet werden
+	method ... post oder get
+	
+	
+-->
+<form action="/home/checkForm" method="post">
+
+    <!-- label ... Beschriftungsfeld -->
+    <label for="firstname">Vorname</label>
+    <!-- input type="text" ... einzeiliges Textfeld
+            id und name wird für C#, JS und CSS benötigt
+    -->
+    <input type="text" id="firstname" name="firstname" />
+    <br />
+
+    <label for="description">Beschreibung</label>
+
+    <!-- textarea ... mehrzeiliges Textfeld
+        cols, row ... Anzahl der Zeilen und Spalten -->
+    <textarea id="description" name="description" rows="10" cols="50">Geben sie bitte iene Beschreibung ein</textarea>
+    <br />
+
+    <label for="gender">Geschlecht</label>
+    <br />
+    <!-- radio ... es werden Radiobuttons erzeugt
+        es kann immer nur ein einziger davon ausgewählt werden
+        dafür muss der gleiche name verwendet werden -->
+    <input type="radio" id="gender" name="gender" value="male" />männlich
+    <br />
+    <input type="radio" id="gender" name="gender" value="female" />weiblich
+    <br />
+    <input type="radio" id="gender" name="gender" value="notSpecified" />nicht angegeben
+    <br />
+
+    <!-- type="checkbox" rechteckige Kästchen - es können belibig viele ausgewählt werden -->
+    <label for="hobbies">Hobbies</label>
+    <br />
+    <input type="checkbox" id="hobbies" name="hobbies" value="sport" />Sport
+    <br />
+    <input type="checkbox" id="hobbies" name="hobbies" value="computer" />Computer
+    <br />
+    <input type="checkbox" id="hobbies" name="hobbies" value="tanzen" />Tanzen
+    <br />
+    <input type="checkbox" id="hobbies" name="hobbies" value="lesen" />Lesen
+    <br />
+
+    <label for="departments">Abteilungen</label>
+    <br />
+    <!-- select ... eine Auswahlliste - es kann nur ein Element ausgewählt werden -->
+    <select name="departments" id="departments">
+        <option value="wi">Wirtschaftsingenieure</option>
+        <option value="ma">Maschinenbau</option>
+        <option value="et">Elektrotechnik</option>
+        <option value="el">Elektronik</option>
+        <option value="bm">Biomedizin</option>
+        <option value="none" selected="selected">bitte wählen</option>
+    </select>
+    <br />
+    <br />
+
+
+    <label for="colors">Lieblingsfarmen</label>
+    <br />
+    <!-- select ... eine Auswahlliste bei der mehrere Elemente angezeigt und ausgewählt werden können
+        size ... wie viele Elemente sollten angezeigt werden
+        multiple ... es können mehrere Elemente ausgewählt werden
+        -->
+    <select name="colors" id="colors" size="4" multiple="multiple" style="width: 100px">
+        <option value="red">Rot</option>
+        <option value="blue">Blau</option>
+        <option value="white">Weiß</option>
+        <option value="green">Grün</option>
+        <option value="yellow">Geld</option>
+    </select>
+    <br>
+
+    <!-- spezielle Formularelemente -->
+    <label for="color2">Farbe</label>
+    <br />
+    <input type="color" id="color2" name="color2" />
+
+    <label for="email">Mail</label>
+    <br />
+    <input type="email" id="email" name="email" />
+
+    <label for="date">Datum</label>
+    <br />
+    <input type="date" id="date" name="date" />
+
+    <label for="file1">Dateiupload</label>
+    <br />
+    <input type="file" id="file1" name="file1" />
+    <br />
+
+    <label for="age">Alter</label>
+    <input type="number" id="age" name="age" />
+    <br />
+
+    <label for="pwd">Passwort</label>
+    <input type="password" id="pwd" name="pwd" />
+    <br />
+
+    <label for="range1">Wertebreich</label>
+    <input type="range" id="range1" name="range1" min="100" max="140" />
+    <br />
+
+    <!-- buttons
+        submit-button ... zum Absenden des Formulars
+        reset-button ... zum Zurücksenden des Formulars
+        button ... für andere Buttons
+
+        -->
+    <input type="submit" value="absenden" />
+    <br />
+    <input type="reset" value="löschen" />
+    <br />
+
+    <button>Link irgendwohin</button>
+
+
+</form>
